@@ -44,26 +44,21 @@
     ],
     // Clangd 找不到编译数据库（例如 compile_flags.json 文件）时采用的设置,缺陷是不能直接索引同一项目的不同文件,只能分析系统头文件、当前文件和 include 的文件
     "clangd.fallbackFlags": [
-        "-pedantic",
+        // 指定标准
+        "-std=c++20",
+        // 基础警告
         "-Wall",
+        // 隐式转换
+        "-Wconversion",
+        // Effect C++
+        "-Weffc++",
+        // 额外警告
         "-Wextra",
-        "-Wcast-align",
-        "-Wdouble-promotion",
-        "-Wformat=2",
-        "-Wimplicit-fallthrough",
-        "-Wmisleading-indentation",
-        "-Wnon-virtual-dtor",
-        "-Wnull-dereference",
-        "-Wold-style-cast",
-        "-Woverloaded-virtual",
+        // 仅使用 C++ 标准中允许的行为
         "-Wpedantic",
+        // 局部变量与外部变量重名
         "-Wshadow",
-        "-Wunused",
-        "-pthread",
-        "-fuse-ld=lld",
-        "-fsanitize=address",
-        "-fsanitize=undefined",
-        "-stdlib=libc++",
-        "-std=c++20"
+        // 未使用
+        "-Wunused"
     ]
 }
