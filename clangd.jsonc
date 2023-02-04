@@ -1,11 +1,13 @@
 {
-    "aa": [
+    "clangd.arguments": [
         // 全局补全（会自动补充头文件）
         "--all-scopes-completion",
-        // 在后台自动分析文件（基于 complie_commands)
+        // 在后台自动分析文件并保存索引
         "--background-index",
         // 启用 clang-tidy 功能
         "--clang-tidy",
+        // 启用 clang-parser 分析建议，或仅使用基于文本的分析器（使用 never）
+        "--completion-parse=auto",
         // 更详细的补全内容
         "--completion-style=detailed",
         // 默认格式化风格: 谷歌开源项目代码指南（可用的有 LLVM, Google, Chromium, Mozilla, Webkit, Microsoft, GNU 等）
@@ -31,7 +33,7 @@
         "-j=4",
         // 让 Clangd 生成更详细的日志
         "--log=verbose",
-        // pch优化的位置（memory 或 disk，选择memory会增加内存开销，但会提升性能)
+        // pch优化的位置（memory 或 disk，选择 memory 会增加内存开销，但会提升性能)
         "--pch-storage=memory",
         // 输出的 JSON 文件更美观
         "--pretty",
@@ -39,5 +41,29 @@
         // "--query-driver=/usr/bin/clang++",
         // 建议排序模型：heuristics 和 decision_forest
         "--ranking-model=heuristics"
+    ],
+    // Clangd 找不到编译数据库（例如 compile_flags.json 文件）时采用的设置,缺陷是不能直接索引同一项目的不同文件,只能分析系统头文件、当前文件和 include 的文件
+    "clangd.fallbackFlags": [
+        "-pedantic",
+        "-Wall",
+        "-Wextra",
+        "-Wcast-align",
+        "-Wdouble-promotion",
+        "-Wformat=2",
+        "-Wimplicit-fallthrough",
+        "-Wmisleading-indentation",
+        "-Wnon-virtual-dtor",
+        "-Wnull-dereference",
+        "-Wold-style-cast",
+        "-Woverloaded-virtual",
+        "-Wpedantic",
+        "-Wshadow",
+        "-Wunused",
+        "-pthread",
+        "-fuse-ld=lld",
+        "-fsanitize=address",
+        "-fsanitize=undefined",
+        "-stdlib=libc++",
+        "-std=c++20"
     ]
 }
