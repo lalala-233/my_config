@@ -2,3 +2,6 @@
 
 [vscode]
 clangd = "clangd.jsonc"
+
+[llvm]
+clang-format = "clang-format.yaml"
