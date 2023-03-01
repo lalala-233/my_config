@@ -1,7 +1,17 @@
 # 记载程序对应的文件
 
-[vscode]
-clangd = "clangd.jsonc"
+[editorconfig]
+editorconfig = "editorconfig.ini"
+origin = ".editorconfig"
 
 [llvm]
 clang-format = "clang-format.yaml"
+origin = ".clang-format"
+
+[vscode]
+clangd = "clangd.jsonc"
+origin = false
+
+[xmake]
+xmake = "xmake.lua"
+origin = "xmake.lua"
