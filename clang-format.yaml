@@ -393,7 +393,7 @@ ColumnLimit: 80
 # CommentPragmas: '^ Comment pragma: keep'
 # #include <vector> // Comment pragma: keep
 # 把这个字符串写在注释里，该行不会被格式化。
-CommentPragmas: ""
+# CommentPragmas: ""
 
 # 说明: 是否压缩命名空间(Namespaces)。
 # 类型: Boolean
@@ -595,7 +595,7 @@ IndentGotoLabels: true
 # PPDIS_None       (文件配置项: None      ) 不缩进预处理指令。
 # PPDIS_AfterHash  (文件配置项: AfterHash ) 在 # 后缩进指令。缩进字符数请参阅: PPIndentWidth.
 # PPDIS_BeforeHash (文件配置项: BeforeHash) 在 # 前缩进指令。
-IndentPPDirectives: AfterHash
+IndentPPDirectives: BeforeHash
 
 # 说明: 是否缩进 requires 语句。
 #       仅 RequiresClausePosition 为 OwnLine 或 WithFollowing 时生效。
@@ -820,8 +820,9 @@ RawStringFormats: []
 # RAS_Middle  (文件配置项: Middle ) 引用居中两边留空。
 ReferenceAlignment: Pointer
 
-# 说明: 指定是否在注释代码块后重排缩进。
-ReflowComments: false
+# 说明: 是否格式化注释。
+# 注：行格式化注释的选项由 SpacesInLineCommentPrefix 决定
+ReflowComments: true
 
 # 说明: 删除可选的控制语句大括号(if、else、for 和 while)。
 RemoveBracesLLVM: false
@@ -975,7 +976,7 @@ SpacesInCStyleCastParentheses: false
 #       要禁用最大值，请将其设置为 -1, 除此之外，最大值优先于最小值。
 # 类型: SpacesInLineComment
 # 取值:
-# 注：当 ReflowComments 设置为 true 时会将注释的代码当作注释并进行重新缩进
+# 注：此选项只有在 ReflowComments 设置为 true 时才有效
 SpacesInLineCommentPrefix:
   Minimum: 1
   Maximum: 1
