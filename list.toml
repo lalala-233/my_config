@@ -8,6 +8,9 @@ origin = ".editorconfig"
 clang-format = "clang-format.yaml"
 origin = ".clang-format"
 
+[pinyin]
+pinyin = "pinyin.txt"
+
 [vscode]
 clangd = "clangd.jsonc"
 origin = false
