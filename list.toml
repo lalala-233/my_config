@@ -11,9 +11,11 @@ origin = ".clang-format"
 [pinyin]
 pinyin = "pinyin.txt"
 
-[vscode]
+[vscode.settings.clangd]
 clangd = "clangd.jsonc"
-origin = false
+
+[vscode.settings]
+settings = "settings.json"
 
 [xmake]
 xmake = "xmake.lua"
