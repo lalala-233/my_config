@@ -11,6 +11,10 @@ origin = ".clang-format"
 [pinyin]
 pinyin = "pinyin.txt"
 
+[rust.clang-format]
+clang-format = "rust.clang-format"
+origin = ".clang-format"
+
 [vscode.settings.clangd]
 clangd = "clangd.jsonc"
 
