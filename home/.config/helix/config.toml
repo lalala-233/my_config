@@ -1,0 +1,5 @@
+theme = "onelight"
+
+[editor]
+auto-save = true
+
