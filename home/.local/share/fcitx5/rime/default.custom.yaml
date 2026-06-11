@@ -1,0 +1,13 @@
+patch:
+  __include: rime_ice_suggestion:/
+  punctuator:
+    full_shape:
+      '[' : '「'
+      ']' : '」'
+      '{' : '『'
+      '}' : '』'
+    half_shape:
+      '[' : '「'
+      ']' : '」'
+      '{' : '『'
+      '}' : '』'
