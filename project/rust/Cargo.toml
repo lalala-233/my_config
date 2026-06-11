@@ -1,0 +1,16 @@
+[package]
+name = "template"
+version = "0.1.0"
+edition = "2024"
+description = ""
+homepage = "https://github.com/lalala-233/"
+license = ""
+readme = "README.md"
+repository = "https://github.com/lalala-233/"
+
+[dependencies]
+
+[profile.dev]
+opt-level = 3
+debug = false
+strip = true
